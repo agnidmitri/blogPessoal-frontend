@@ -8,4 +8,5 @@ export class User{
     public foto: string
     public tipo: string
     public postagem: Post[]
+    public confirmPass: string
 }
