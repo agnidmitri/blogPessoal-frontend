@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   
   if (environment.token ==''){
-    alert('Sua sessão foi encerrada. Para acessar, faça login novamente.')
+    
     this.router.navigate(['/login'])
   }
   }
