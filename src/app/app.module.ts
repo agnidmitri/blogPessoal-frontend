@@ -12,6 +12,7 @@ import {FooterComponent} from './footer/footer.component';
 import {LoginComponent} from './login/login.component';
 import {SignupComponent} from './signup/signup.component';
 import {HomeComponent} from './home/home.component';
+import { TemaComponent } from './tema/tema.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {HomeComponent} from './home/home.component';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
