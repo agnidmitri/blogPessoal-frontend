@@ -21,6 +21,8 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    this.showPass()
+    this.showPassConf()
   }
 
   confirmPass(event: any) {
@@ -34,8 +36,6 @@ export class SignupComponent implements OnInit {
   cadastrar(){
     this.user.tipo = this.tipoUsers
 
-
-    
     if (this.user.senha != this.confirmaPass){
       alert('As senhas não são correspondem')
     } else {
@@ -45,5 +45,33 @@ export class SignupComponent implements OnInit {
         alert('Cadastro realizado com sucesso!')
       })
     }
+  }
+
+  showPass() {
+    let btn = document.querySelector('.fa-eye-slash')
+
+    btn?.addEventListener('click', () => {
+      let inputSenha = document.querySelector('#pass')
+
+      if (inputSenha?.getAttribute('type') == 'password') {
+        inputSenha?.setAttribute('type', 'text')
+      } else {
+        inputSenha?.setAttribute('type', 'password')
+      }
+    })
+  }
+
+  showPassConf() {
+    let btn = document.querySelector('.fa-eye-slash')
+
+    btn?.addEventListener('click', () => {
+      let inputSenha = document.querySelector('#passconf')
+
+      if (inputSenha?.getAttribute('type') == 'password') {
+        inputSenha?.setAttribute('type', 'text')
+      } else {
+        inputSenha?.setAttribute('type', 'password')
+      }
+    })
   }
 }

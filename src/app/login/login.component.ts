@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    this.showPass()
   }
 
   login(){
@@ -35,6 +36,20 @@ export class LoginComponent implements OnInit {
     }, erro =>{
       if(erro.status == 500){
         alert('Usuário ou senha estão incorretos.')
+      }
+    })
+  }
+
+  showPass() {
+    let btn = document.querySelector('.fa-eye-slash')
+
+    btn?.addEventListener('click', () => {
+      let inputSenha = document.querySelector('#pass')
+
+      if (inputSenha?.getAttribute('type') == 'password') {
+        inputSenha?.setAttribute('type', 'text')
+      } else {
+        inputSenha?.setAttribute('type', 'password')
       }
     })
   }

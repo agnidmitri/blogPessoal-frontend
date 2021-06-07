@@ -7,7 +7,18 @@
 }
 
 
+.ml{
+    margin-left: 255px;
+  }
+
 #marg{
     margin-top: 250px;
 }
 
+.form-bg{
+    background-color: #f2f7f270;
+    padding: 40px;
+    border-radius: 4%;
+    box-shadow: 4px 6px 3px 0px #0000003a;
+    width: 400px;
+  }
