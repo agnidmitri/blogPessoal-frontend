@@ -1,8 +1,9 @@
-import { TemaService } from './../service/tema.service';
+import {TemaService} from './../service/tema.service'
 import { Tema } from './../model/Tema';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -16,7 +17,9 @@ export class TemaComponent implements OnInit {
   listaTemas: Tema[]
 
   constructor(
-    private router: Router
+    private router: Router,
+    private temaService: TemaService
+
   ) { }
 
   ngOnInit()  {
@@ -24,6 +27,22 @@ export class TemaComponent implements OnInit {
     
       this.router.navigate(['/login'])
     }
+    this.findAllTemas()
+  }
+
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[])=> {
+      this.listaTemas = resp
+    })
+  }
+
+  cadastrar(){
+    this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      alert('Tema criado com sucesso!')
+      this.findAllTemas()
+      this.tema = new Tema()
+    })
   }
 
 }
