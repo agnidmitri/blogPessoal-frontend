@@ -23,7 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-regular-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "bootstrap": "^5.0.1",
+    "bootstrap": "^4.1.1",
     "jquery": "^3.6.0",
     "ngx-bootstrap": "^4.3.0",
     "ngx-order-pipe": "^2.1.1",
